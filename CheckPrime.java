@@ -5,9 +5,23 @@ public class CheckPrime {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the number: ");
         int value = scanner.nextInt();
-        if (value % 2 == 0) {
+        int i = 2;
+        boolean flag=false; 
+        if (i == 0 || i == 1) {
+            flag = false;
+        }
+        while (i <= value / 2) {
+            if(value % i == 0)
+            {
+                flag = true;
+                break;
+            }
+            ++i;
+        }
+        if(flag) {
             System.out.println(value + " is Prime");
-        } else {
+        }
+        else {
             System.out.println(value + " is not Prime");
         }
         scanner.close();
